@@ -8,7 +8,7 @@ const authorSchema = new mongoose.Schema({
   }
 })
 
-authorSchema.pre('remove1',function(next)  {
+authorSchema.pre('deleteOne',function(next)  {
 Book.find({ author: this.id} , (err,books) =>{
   if(err){
     console.log('error1')
